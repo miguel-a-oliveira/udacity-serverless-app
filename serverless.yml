@@ -6,7 +6,6 @@ service: udacity-serverless-todo-app
 plugins:
   - serverless-webpack
   - serverless-iam-roles-per-function
-  # - serverless-plugin-tracing
   - serverless-reqvalidator-plugin
   - serverless-aws-documentation
 
@@ -26,9 +25,7 @@ provider:
   # ${self:provider.environment.S3_BUCKET_NAME}
   environment:
     TODOS_TABLE: Todos-${self:provider.stage}
-    # TODOS_CREATED_AT_INDEX: CreatedAtIndex
     S3_BUCKET_NAME: balde-serverless-${self:provider.stage}
-    # SIGNED_URL_EXPIRATION: 300
     PROJECT_NAME: Todo-Serverless-App
 
 custom:
